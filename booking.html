@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="booking.css">
+    <script src="booking.js"></script>
+    <!-- <script src="https://kit.fontawesome.com/b0ec42bfc3.js" crossorigin="anonymous"></script> -->
+
+</head>
+
+<body>
+    <!-- <i class="fas fa-space-shuttle" style="display: flex; size: 100px;"></i> -->
+    <form action="reservation.php" method="post">
+        <div class="elem-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="visitor_name" placeholder="Enter your name here..."
+                pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+
+        <div class="elem-group">
+            <label for="email">Your E-mail</label>
+            <input type="email" id="email" name="visitor_email" placeholder="Enter your email here..." required>
+        </div>
+
+        <div class="elem-group">
+            <label for="global_id">Your Global Citizen Id</label>
+            <input type="tel" id="global_id" name="visitor_phone" placeholder="Global Citizen Id(000-000-0000)"
+                pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+
+        <hr>
+
+        <div class="elem-group inlined">
+            <label for="adult">Adults</label>
+            <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+        </div>
+
+        <div class="elem-group inlined">
+            <label for="child">Children</label>
+            <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
+        </div>
+
+        <div class="elem-group inlined">
+            <label for="boarding-date">Boarding Date</label>
+            <input type="date" id="boarding-date" name="checkin" required>
+        </div>
+
+        <!-- <div class="elem-group inlined">
+            <label for="checkout-date">Check-out Date</label>
+            <input type="date" id="checkout-date" name="checkout" required>
+        </div> -->
+
+        <div class="elem-group">
+            <label for="spaceline-selection">Select Spaceline Preference</label>
+            <select id="spaceline-selection" name="spaceline_preference" required>
+                <option value="">Choose a Sapceline from the List</option>
+                <option value="isro">ISRO-Launchers.ltd</option>
+                <option value="nasa">NASA-Shuttlers.ltd</option>
+                <option value="spacex">SpaceX.ltd</option>
+            </select>
+        </div>
+
+        <hr>
+
+        <!-- <div class="elem-group">
+            <label for="message">Anything Else?</label>
+            <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important."
+                required></textarea>
+        </div> -->
+
+        <button type="submit">Book The Flight</button>
+    </form>
+</body>
+
+</html>

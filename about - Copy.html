@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  color:bisque;
+  background-image: linear-gradient(-45deg, #bd43a8, #650392, #050505, #4ccff0);
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  margin-bottom: 16px;
+  padding: 0 8px;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  margin: 8px;
+}
+
+.about-section {
+  padding: 50px;
+  text-align: center;
+  background-image: url("space1.jpg");
+  height: 100%;
+            width: 100%;
+  /* background-color: #474e5d; */
+  color: white;
+}
+
+.container {
+  padding: 0 16px;
+}
+.row{
+  padding: 50px;
+}
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.title {
+  color:blanchedalmond;
+}
+
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+
+.button:hover {
+  background-color: #555;
+}
+@keyframes gradient {
+  0% {
+    background-position: 0% 40%;
+  }
+  50% {
+    background-position: 100% 40%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-section">
+  <h1>About Us Page</h1>
+  <p>We started <em>SpaceZ</em> 
+    
+     As Humans revolutionized technology to travel to planets within the solar system to
+     acquire more resources and to handle population explosion on earth there was a need for such a platform.
+    
+    <br>
+    Along the way, we aim to striding out of our solar system and communicate with other extra-terrestrial beings.
+    We assure excellent customer service and assistance on our flights !
+    <br>
+    </p>
+  <!-- <p>Resize the browser window to see that this page is responsive by the way.</p -->
+</div>
+
+<h2 style="text-align:center">Our Team</h2>
+<div class="row">
+  <div class="column">
+    <div class="card">
+      <img src="male.jpg" alt="Jane" style="width:100%" >
+      <div class="container">
+        <h2>Sonu Sahu</h2>
+        <p class="title">CEO & Founder</p>
+        <!-- <p>Some text that describes me lorem ipsum ipsum lorem.</p> -->
+        <p>sonu.sahu@spit.ac.in</p>
+        <p><button class="button" ><a class="button" style="text-decoration: none;" href="mailto:sonu.sahu@spit.ac.in">Contact</a></button></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <img src="female.jpg" alt="Mike" style="width:100%">
+      <div class="container">
+        <h2>Teethi Kanthe</h2>
+        <p class="title">CEO & Founder</p>
+        
+        <p>teethi.kanthe@spit.ac.in</p>
+        <p><button class="button"><a class="button" style="text-decoration: none;" href="mailto:teethi.kanthe@spit.ac.in">Contact</a></button></p>
+      </div>
+    </div>
+  </div>
+  
+ 
+</div>
+
+</body>
+</html>

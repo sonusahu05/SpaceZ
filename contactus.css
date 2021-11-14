@@ -1,0 +1,79 @@
+input[type="text"],
+select,
+textarea {
+  border: 1px solid #ccc;
+  background-color: rgb(229, 185, 250);
+  border-radius: 4px;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  width: 100%;
+  padding: 12px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+input[type="submit"] {
+  background-color: #04aa6d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.cont {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  color: whitesmoke;
+  border-radius: 5px;
+  background-image: linear-gradient(
+    0.9turn,
+    rgb(130, 104, 224),
+    20%,
+    rgb(49, 5, 99)
+  );
+  padding: 20px;
+}
+.box {
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 900px;
+  color: rgb(255, 255, 253);
+  border-radius: 5px;
+  background-image: linear-gradient(
+    0.9turn,
+    rgb(130, 104, 224),
+    20%,
+    rgb(8, 103, 158)
+  );
+  font-size: large;
+  padding: 20px;
+}
+body {
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background: linear-gradient(-45deg, #2b1b16, #650392, #050505, #047c60);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 40%;
+  }
+  50% {
+    background-position: 100% 40%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

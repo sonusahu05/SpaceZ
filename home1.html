@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="booking.css">
+  <script src="booking.js"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background-image: url(plane.jpg);
+      margin: 0px;
+      padding: 0px;
+      background: url("space1.jpg");
+      /* background-repeat: no-repeat; */
+      background-size: 100%;
+      /* position: absolute;
+            left: 0px; */
+      height: 100%;
+      width: 100%;
+      color: aliceblue;
+    }
+
+    .left {
+      /* border: 2px solid pink; */
+      display: inline-block;
+      display: inline-block;
+      position: absolute;
+      left: 50px;
+      /* margin: 20px; */
+      top: 20px;
+    }
+
+    .mid {
+      /* border: 2px solid pink; */
+      display: block;
+      width: 40%;
+      margin: 20px auto;
+      /* text-align: center; */
+
+    }
+
+    .navbar a {
+      text-decoration: none;
+      color: aliceblue;
+    }
+
+    .navbar {
+      display: inline-block;
+    }
+
+    .navbar li {
+      display: inline-block;
+      padding: 20px;
+      font-size: 30px;
+    }
+
+    .logo {
+      text-shadow: darkred;
+      text-decoration-color: deepskyblue;
+      color: darkorange;
+    }
+
+    .pic {
+      height: 30px;
+      width: 30px;
+    }
+
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    .column {
+      float: left;
+      width: 25%;
+      margin-bottom: 16px;
+      padding: 0 8px;
+
+    }
+
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      margin: 8px;
+    }
+
+    .about-section {
+      padding: 50px;
+      text-align: center;
+      background-image: url("space1.jpg");
+      height: fit-content;
+      width: 100%;
+      /* background-color: #474e5d; */
+      color: white;
+    }
+
+    .container {
+      padding: 0 16px;
+      box-sizing: border-box;
+    }
+
+    .row {
+      /* background: url("space1.jpg") ;
+            background-repeat: no-repeat; */
+      width: fit-content;
+      height: fit-content;
+      padding: 30px;
+      width: 80%;
+      margin: 20px auto;
+      border-radius: 20px;
+      border-color: black;
+      border-width: 5px;
+      background-image: linear-gradient(-45deg, #bd43a8, #650392, #050505, #4ccff0);
+      background-color: rgb(224, 204, 204);
+    }
+
+    .container::after,
+    .row::after {
+      content: "";
+      clear: both;
+      display: table;
+    }
+
+    .title {
+      color: grey;
+    }
+
+
+    .button {
+      border: none;
+      outline: 0;
+      display: inline-block;
+      padding: 8px;
+      color: white;
+      background-color: #000;
+      text-align: center;
+      cursor: pointer;
+      width: 100%;
+    }
+
+    .button:hover {
+      background-color: #555;
+    }
+
+    .button:focus {
+      background-color: coral;
+    }
+
+
+    @media screen and (max-width: 650px) {
+      .column {
+        width: 100%;
+        display: block;
+      }
+    }
+
+    @media print {
+      body * {
+        visibility: hidden;
+      }
+
+      .print-container,
+      .print-container * {
+        visibility: visible;
+      }
+
+      .print-container {
+        position: absolute;
+        left: 5px;
+        top: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <div class="left">
+      <img class="pic" src="logo.jpg">
+      <h1 class="logo" style="font-size: 9px;">SpaceZ</h1>
+
+    </div>
+    <div class="mid">
+      <ul class="navbar">
+        <li><a href="home1.html">Home</a></li>
+
+        <!-- <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Sign Up</button>-->
+        <li><a href="about.html">About us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contactus.html">Contact</a></li>
+      </ul>
+
+
+    </div>
+
+
+  </header>
+
+  <div class="about-section">
+    <h1>HOME</h1>
+    <p>Welcome to the SpaceZ Interplanetary Flight Company !</p>
+    <p>Select your source and destination planets and fill out required details.</p>
+  </div>
+
+  <DIV>
+    <h2 style="text-align:center" class="row">SELECT SOURCE PLANET</h2>
+    <div class="row">
+      <DIV>
+        <H2>INNER PLANETS</H2>
+      </DIV>
+      <div class="column">
+        <div class="card">
+          <img src="mercury.jpg" alt="Jane" style="width:100%">
+          <div class="container">
+            <h2>MERCURY</h2>
+            <p class="title">1 spacestation available</p>
+            <p>Mercury is the fastest planet, zipping around the Sun every 88 Earth days.</p>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(mercury)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="venus.jpg" alt="Mike" style="width:100%">
+          <div class="container">
+            <h2>VENUS</h2>
+            <p class="title">1 spacestation available</p>
+            <p>Venus spins slowly in the opposite direction from most planets.</p>
+            <br>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(venus)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="eatrh.jpg" alt="Jane" style="width:100%">
+          <div class="container">
+            <h2>EARTH</h2>
+            <p class="title">11 spacestations available</p>
+            <p>Earth—our ancestral home planet</p>
+            <br>
+            <br>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(earth)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="mars.jpg" alt="Mike" style="width:100%">
+          <div class="container">
+            <h2>MARS</h2>
+            <p class="title">7 spacestations available</p>
+            <p>Mars is one of the most explored bodies in our solar system</p>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(mars)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+    <div class="row">
+      <DIV>
+        <H2>OUTER PLANETS</H2>
+      </DIV>
+      <div class="column">
+        <div class="card">
+          <img src="jupitar.jpg" alt="Jane" style="width:100%">
+          <div class="container">
+            <h2>JUPITER</h2>
+            <p class="title">2 spacestations available</p>
+            <p>Jupiter is more than twice as massive than the other planets of our solar system combined.</p>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(jupiter)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="saturn.jpg" alt="Mike" style="width:100%">
+          <div class="container">
+            <h2>SATURN</h2>
+            <p class="title">1 spacestation available</p>
+            <p>Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system.</p>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(saturn)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="uranus.jpg" alt="Jane" style="width:100%">
+          <div class="container">
+            <h2>URANUS</h2>
+            <p class="title">3 spacestations available</p>
+            <p>Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit.</p>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(uranus)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="card">
+          <img src="naptune.jpg" alt="Mike" style="width:100%">
+          <div class="container">
+            <h2>NEPTUNE</h2>
+            <p class="title">1 spacestation available</p>
+            <p>Neptune—the eighth and most distant major planet orbiting our Sun—is dark, cold and whipped by supersonic
+              winds.</p>
+            <p>Flight price is propotional to distance travelled.</p>
+            <p><button class="button" onclick="dest(naptune)">SELECT</button></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </DIV>
+
+
+
+  <DIV id="3">
+    <DIV>
+      <h2 style="text-align:center" class="row">SELECT DESTINATION PLANET</h2>
+      <div class="row">
+        <DIV>
+          <H2>INNER PLANETS</H2>
+        </DIV>
+        <div class="column">
+          <div class="card">
+            <img src="mercury.jpg" alt="Jane" style="width:100%">
+            <div class="container">
+              <h2>MERCURY</h2>
+              <p class="title">1 spacestation availablev</p>
+              <p>Mercury is the fastest planet, zipping around the Sun every 88 Earth days.</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(mercury)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="venus.jpg" alt="Mike" style="width:100%">
+            <div class="container">
+              <h2>VENUS</h2>
+              <p class="title">1 spacestation available</p>
+              <p>Venus spins slowly in the opposite direction from most planets.</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(venus)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="eatrh.jpg" alt="Jane" style="width:100%">
+            <div class="container">
+              <h2>EARTH</h2>
+              <p class="title">11 spacestations available</p>
+              <p>Earth—our ancestral home planet</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(earth)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="mars.jpg" alt="Mike" style="width:100%">
+            <div class="container">
+              <h2>MARS</h2>
+              <p class="title">7 spacestations available</p>
+              <p>Mars is one of the most explored bodies in our solar system</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(mars)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <div class="row">
+        <DIV>
+          <H2>OUTER PLANETS</H2>
+        </DIV>
+        <div class="column">
+          <div class="card">
+            <img src="jupitar.jpg" alt="Jane" style="width:100%">
+            <div class="container">
+              <h2>JUPITER</h2>
+              <p class="title">2 spacestations available</p>
+              <p>Jupiter is more than twice as massive than the other planets of our solar system combined.</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(jupiter)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="saturn.jpg" alt="Mike" style="width:100%">
+            <div class="container">
+              <h2>SATURN</h2>
+              <p class="title">1 spacestation available</p>
+              <p>Adorned with a dazzling, complex system of icy rings, Saturn is unique in our solar system.</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(saturn)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="uranus.jpg" alt="Jane" style="width:100%">
+            <div class="container">
+              <h2>URANUS</h2>
+              <p class="title">3 spacestations available</p>
+              <p>Uranus—seventh planet from the Sun—rotates at a nearly 90-degree angle from the plane of its orbit.</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(uranus)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="column">
+          <div class="card">
+            <img src="naptune.jpg" alt="Mike" style="width:100%">
+            <div class="container">
+              <h2>NEPTUNE</h2>
+              <p class="title">1 spacestation available</p>
+              <p>Neptune—the eighth and most distant major planet orbiting our Sun—is dark, cold and whipped by
+                supersonic winds.</p>
+              <p>Flight price is propotional to distance travelled.</p>
+              <p><button class="button" onclick="dest2(naptune)">SELECT</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </DIV>
+
+  </DIV>
+
+  <div class="row">
+    <h2 id="1"></h2>
+    <h2 id="2"></h2>
+    <!-- <p><button class="button" onclick="dest2(mars)">SELECT</button> -->
+    <div id="3">
+      <!-- <button onclick="document.getElementById('3').style.display='block'" style="width:auto;">YES</button> -->
+      <p><button class="button" onclick="last(y,z)">proceed</button>
+
+    </div>
+    <h2 id="4"></h2>
+    <h2 id="5"></h2>
+    <h1 id="6"></h1>
+    <h1 id="7"></h1>
+    <div id="5000" class="print-container">
+      <form action="reservation.php" method="post">
+        <div class="elem-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="visitor_name" placeholder="Enter your name here..."
+            pattern=[A-Z\sa-z]{3,20} required>
+        </div>
+
+        <div class="elem-group">
+          <label for="email">Your E-mail</label>
+          <input type="email" id="email" name="visitor_email" placeholder="Enter your email here..." required>
+        </div>
+
+        <div class="elem-group">
+          <label for="global_id">Your Global Citizen Id</label>
+          <input type="tel" id="global_id" name="visitor_phone" placeholder="Enter your Your Global Citizen Id here..."
+            pattern=(\d{3})-?\s?(\d{3})-?\s?(\d{4}) required>
+        </div>
+
+        <hr>
+
+        <div class="elem-group inlined">
+          <label for="adult">Adults</label>
+          <input type="number" id="adult" name="total_adults" placeholder="2" min="1" required>
+        </div>
+
+        <div class="elem-group inlined">
+          <label for="child">Children</label>
+          <input type="number" id="child" name="total_children" placeholder="2" min="0" required>
+        </div>
+
+        <div class="elem-group inlined">
+          <label for="boarding-date">Boarding Date</label>
+          <input type="date" id="boarding-date" name="checkin" required>
+        </div>
+
+        <!-- <div class="elem-group inlined">
+                    <label for="checkout-date">Check-out Date</label>
+                    <input type="date" id="checkout-date" name="checkout" required>
+                </div> -->
+
+        <div class="elem-group">
+          <label for="spaceline-selection">Select Spaceline Preference</label>
+          <select id="spaceline-selection" name="spaceline_preference" required>
+            <option value="">Choose a Sapceline from the List</option>
+            <option value="isro">ISRO-Launchers.ltd</option>
+            <option value="nasa">NASA-Shuttlers.ltd</option>
+            <option value="spacex">SpaceX.ltd</option>
+          </select>
+        </div>
+
+        <div class="elem-group">
+          <label for="payment-option">Payment-Method</label>
+          <select id="hello" name="payment-option" required>
+            <option value="">Choose a payment method</option>
+            <option value="Biotcoin">Bitcoin</option>
+            <option value="dollers">Dollers</option>
+            <option value="rupees">Rupees</option>
+          </select>
+        </div>
+
+        <hr>
+
+        <!-- <div class="elem-group">
+                    <label for="message">Anything Else?</label>
+                    <textarea id="message" name="visitor_message" placeholder="Tell us anything else that might be important."
+                        required></textarea>
+                </div> -->
+
+        <!-- <button type="submit">Book The Flight</button> -->
+        <!-- <button class="button" onclick=" -->
+        <!-- //  document.getElementById("100").innerHTML = "CONGRATULATIONS YOU HAVE SUCESFULLY BOOKED YOUR TICKET";"> -->
+        <!-- //  Book The Flight</button> -->
+        <button class="button" type="button"
+          onclick='document.getElementById("100").innerHTML = "CONGRATULATIONS YOU HAVE SUCESFULLY BOOKED YOUR TICKET!"'>Book
+          The Flight</button>
+
+
+
+        <!-- <button class="button" onclick="printContent('5000')">Print this page</button> -->
+
+
+
+        <!-- <a href="javascript:void(0);" onclick="printPageArea('500')">Print</a> -->
+        <!-- <div id="100"></div> -->
+      </form>
+    </div>
+    <button class="button" onclick="window.print();">Print this page</button>
+  </div>
+
+
+
+
+
+  <script>
+
+    function printContent(el) {
+      var restorepage = document.body.innerHTML;
+      var printcontent = document.getElementById(el).innerHTML;
+      document.body.innerHTML = printcontent;
+      window.print();
+      document.body.innerHTML = restorepage;
+    }
+
+
+    const earth = {
+      PLANET: "EARTH",
+      DIST10: 149,
+    };
+    const mars = {
+      PLANET: "MARS",
+      DIST10: 227,
+    };
+    const venus = {
+      PLANET: "VENUS",
+      DIST10: 108,
+    };
+    const mercury = {
+      PLANET: "MERCURY",
+      DIST10: 57,
+    };
+    const saturn = {
+      PLANET: "SATURN",
+      DIST10: 1434,
+    };
+    const jupiter = {
+      PLANET: "JUPITER",
+      DIST10: 778,
+    };
+    const uranus = {
+      PLANET: "URANUS",
+      DIST10: 2871,
+    };
+    const naptune = {
+      PLANET: "NEPTUNE",
+      DIST10: 4495,
+    };
+    // var earth = "EARTH", distE = 149;
+    // var mars = "MARS", distM = 227;
+    // var venus = "venus", distV = 108;
+    // var jupitor = "Jupitor", distJ = 778;
+    // var saturn = "saturn", distS = 1434;
+    // var uranus = "uranus", distU = 2871;
+    // var mercury = "mercury", distME = 57;
+    // var naptune = "naptune", distN = 4495;
+
+    // var source = "SELECT SOURCE PLANET";
+    // var destination = "SELECT DESTINETION PLANET";
+
+    let y = "x";
+    let z = "x";
+    let o = 1;
+    let p = 1;
+    var diff = 10;
+
+    function dest(a) {
+      document.getElementById("1").innerHTML = "YOUR SOURCE PLANET IS " + a.PLANET + ". CONFIRM?";
+      // document.getElementById("2").innerHTML = "YOUR SOURCE PLANET IS";
+      // let y=a
+
+      y = a.PLANET;
+      o = a.DIST10;
+      // document.getElementById("").innerHTML = "YOUR SOURCE PLANET IS " + y+ y;
+      return 0;
+    }
+
+
+
+    function dest2(b) {
+      document.getElementById("2").innerHTML = "YOUR DESTINATION PLANET IS " + b.PLANET;
+      // let z=b;
+      // document.getElementById("2").innerHTML = "YOUR SOURCE PLANET IS " + b ;
+      z = b.PLANET;
+      p = b.DIST10;
+      return 0;
+    }
+
+    function last(c, d) {
+      // document.getElementById("5").innerHTML ="here" +c+d ;
+      diff = (p - o) * 100;
+      document.getElementById("6").innerHTML = "The  price for the travel from  " + c + " to " + d + " is " + Math.abs(diff) + "BTC";
+      document.getElementById("7").innerHTML = "Complete the form in order to proceed to payment...";
+
+      return 0;
+    }
+
+  </script>
+</body>
+
+</html>
